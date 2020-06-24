@@ -1,0 +1,24 @@
+{
+  "name": "blockchain-cryptocurrency",
+  "version": "1.0.0",
+  "description": "Culled from a class entitled \"Build A Blockchain Cryptocurrency From Scratch.\"",
+  "main": "index.js",
+  "scripts": {
+    "dev-test": "nodemon dev-test",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ODonnchadha/blockchain-cryptocurrency.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ODonnchadha/blockchain-cryptocurrency/issues"
+  },
+  "homepage": "https://github.com/ODonnchadha/blockchain-cryptocurrency#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
