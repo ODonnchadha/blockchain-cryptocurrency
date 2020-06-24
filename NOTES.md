@@ -52,3 +52,18 @@
     2. lastHash. The hash of the block before it.
     3. Hash. Based upon its own data.
     4. The data to store.
+- Genesis Block:
+    - What about the first block? The Genesis block is the origin. Hard-coded "dummy" block.
+    1. Block hashes and SHA-256.
+    - The hash is generated from the timestamp, lastHash, and stored data.
+    - Produces an unique 32-byte (256 bit) hash vaue for unique data inputs.
+    - One-way hash. Useful for block validation.
+    ```javascript
+        npm i crypto-js --save
+    ```
+- Test Runner:
+    ```javascript
+        npm i jest --save-dev
+    ```
+
+## Build The Chain

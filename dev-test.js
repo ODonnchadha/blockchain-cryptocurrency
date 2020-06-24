@@ -1,3 +1,8 @@
 const Block = require('./block');
-const block = new Block('foo', 'bar', 'zoo', 'baz');
-console.log(block.toString());
+
+const block1 = Block.genesis();
+console.log(block1.toString());
+
+const data = 'foobar';
+const block2 = Block.mine(block1, data);
+console.log(block2.toString());
