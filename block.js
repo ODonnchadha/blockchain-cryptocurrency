@@ -34,6 +34,14 @@ class Block {
     }
 
     /*
+    This will generate the hash of a block based only on its instance.
+    */
+    static blockHash(block) {
+        const { timestamp, lastHash, data } = block;
+        return Block.hash(timestamp, lastHash, data);
+    }
+
+    /*
     Software driver. Used for testing.
     */
     toString() {
