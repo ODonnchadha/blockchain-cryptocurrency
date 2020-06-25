@@ -1,4 +1,4 @@
-const Block = require('./block');
+const Block = require('./blockchain/block');
 
 const block1 = Block.genesis();
 console.log(block1.toString());
