@@ -80,3 +80,19 @@
 ```javascript
     npm i ws --save
 ```
+
+## Proof of Work System
+- A system that requires miners to do computational work to add blocks.
+- Any per can replace the blockchain.
+- The proof-of-work makes it expensive to generate corrupt chains.
+- Manageable to submit one block. Unproductive to generate an entire chain.
+1. e.g.:
+    - Hashcash was a proof-of-work system to prevent email spamming. Difficulty = 6.
+2. Proof of Work System:
+    - The difficulty sets a rate of mining.
+    - Bitcoin sets the rate to a new block around every 10 minutes.
+3. 51% attack:
+    - A dishonest miner has more thatn at leaast 51% of the network's power.
+    - 1 51% attack for bitcoin would be more than $6 billion (start of 2018.)
+4. Dynamic Block Difficulty.
+    - Difficulty. And timestamp on newly-timed block. Draw a comparison wtih a mine rate.
