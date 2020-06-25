@@ -73,3 +73,10 @@
     npm i express --save
     npm i body-parser --save
 ```
+
+## Peer-to-Peer server
+- We'll be using WebSockets. Ensure that a connected "peer" has the latest blockchain.
+1. Create a Websocket server.
+```javascript
+    npm i ws --save
+```
