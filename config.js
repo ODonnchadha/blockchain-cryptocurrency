@@ -9,4 +9,9 @@ Create a system that automatically adjusts the difficulty as more miners are add
 */
 const MINE_RATE = 3000;
 
-module.exports = { DIFFICULTY, MINE_RATE };
+/*
+This variable will be a value every wallet begins with. This helps get the 'economy' flowing.
+*/
+const WALLET_INITIAL_BALANCE = 500;
+
+module.exports = { DIFFICULTY, MINE_RATE, WALLET_INITIAL_BALANCE };
