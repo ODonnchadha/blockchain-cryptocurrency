@@ -1,4 +1,5 @@
 const { WALLET_INITIAL_BALANCE } = require('../config');
+const ChainUtil = require('../chain-util');
 
 /*
 The keyPair object will contain methods that can return the private key for 
@@ -10,8 +11,8 @@ other individuals in the network use to send currency to the wallet.
 class Wallet {
   constructor() {
     this.balance = WALLET_INITIAL_BALANCE;
-    this.keyPair = null;
-    this.publicKey = null;
+    this.keyPair = ChainUtil.genKeyPair();
+    this.publicKey = this.keyPair.getPublic().encode('hex');
   }
   toString() {
     return `Wallet -

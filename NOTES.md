@@ -113,3 +113,6 @@
 - Contain wallet objects.
 - Keys for digital signatures and verification.
 - Have transaction objects to represent currency exchange.
+    ```javascript
+        npm i elliptic --save
+    ```
