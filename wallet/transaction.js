@@ -27,8 +27,23 @@ class Transaction {
       { amount: senderWallet.balance - amount, address: senderWallet.publicKey },
       { amount, address: recipient }
     ]);
+    Transaction.sign(transaction, senderWallet);
 
     return transaction;
+  }
+
+  /*
+  Create the vital input object which provides information about the sender in the transaction. 
+  This information includes the sender's original balance, his or her public key, and most important, 
+  his or her signature for the transaction.
+  */
+  static sign(transaction, senderWallet) {
+    transaction.input = {
+      timestamp: Date.now(),
+      amount: senderWallet.balance,
+      address: senderWallet.publicKey,
+      signature: senderWallet.sign(ChainUtil.hash(transaction.outputs))
+    }
   }
 }
 

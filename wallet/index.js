@@ -14,6 +14,11 @@ class Wallet {
     this.keyPair = ChainUtil.genKeyPair();
     this.publicKey = this.keyPair.getPublic().encode('hex');
   }
+
+  sign (hash) {
+    return this.keyPair.sign(hash);
+  }
+
   toString() {
     return `Wallet -
     publicKey : ${this.publicKey.toString()}
