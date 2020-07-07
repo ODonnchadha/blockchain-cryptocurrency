@@ -20,6 +20,14 @@ class ChainUtil {
   static hash(data) {
     return SHA256(JSON.stringify(data)).toString();
   }
+
+  /*
+  With transactions generating signatures based upon their outputs and their private keyss:
+  This function provides a manner in which to verify the authenticity of those signature(s).
+  */
+  static verifySignature(publicKey, signature, hash) {
+    return ec.keyFromPublic(publicKey, 'hex').verify(hash, signature);
+  }
 }
 
 module.exports = ChainUtil;
