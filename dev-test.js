@@ -7,7 +7,11 @@ const data = 'foobar';
 const block2 = Block.mine(block1, data);
 console.log(block2.toString());
 
-
 const Wallet = require('./wallet');
-const wallet1 = new Wallet();
-console.log(wallet1.toString());
+const wallet = new Wallet();
+console.log(wallet.toString());
+
+const Transaction = require('./wallet/transaction');
+const transaction = Transaction.instance(wallet, 'X', 50);
+
+console.log('transaction ', transaction.outputs);

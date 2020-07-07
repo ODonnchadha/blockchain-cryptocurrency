@@ -115,4 +115,11 @@
 - Have transaction objects to represent currency exchange.
     ```javascript
         npm i elliptic --save
+        npm i uuid --save
     ```
+- Tell third party dependencies that a browser will not be involved during the unit testing within package.json
+```javascript
+  "jest": {
+    "testEnvironment": "node"
+  },
+```

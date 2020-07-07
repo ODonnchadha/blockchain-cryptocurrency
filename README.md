@@ -7,5 +7,4 @@ Culled from a class entitled "Build A Blockchain Cryptocurrency From Scratch."
     npm run dev-test
     npm run test
 ```
-
-[url](http://localhost:3001/blocks)
+http://localhost:3001/blocks
