@@ -12,6 +12,6 @@ const wallet = new Wallet();
 console.log(wallet.toString());
 
 const Transaction = require('./wallet/transaction');
-const transaction = Transaction.instance(wallet, 'X', 50);
+const transaction = Transaction.create(wallet, 'X', 50);
 
 console.log('transaction ', transaction.outputs);
