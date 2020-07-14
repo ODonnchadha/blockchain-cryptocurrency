@@ -96,3 +96,30 @@
     - 1 51% attack for bitcoin would be more than $6 billion (start of 2018.)
 4. Dynamic Block Difficulty.
     - Difficulty. And timestamp on newly-timed block. Draw a comparison wtih a mine rate.
+
+## Wallets, Keys, & Transactions:
+- What is a digital wallet?
+    1. Wallets store the balance of an individual. 
+    2. They store an individul's keys: 
+        - Private key used to generate signatures. 
+        - Public key used to verify signatures. Also, the public address.
+- Transactions:
+    1. Input: Timestamp, starting balance, sender's public key.
+    2. Output: Amount. Address.
+- Digital signatures:
+    1. Private key:
+    2. Public key:
+- Blockchain-powered Cryptocurrencies:
+- Contain wallet objects.
+- Keys for digital signatures and verification.
+- Have transaction objects to represent currency exchange.
+    ```javascript
+        npm i elliptic --save
+        npm i uuid --save
+    ```
+- Tell third party dependencies that a browser will not be involved during the unit testing within package.json
+```javascript
+  "jest": {
+    "testEnvironment": "node"
+  },
+```
