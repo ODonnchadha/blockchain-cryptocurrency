@@ -18,10 +18,10 @@ describe('TransactionPool', () => {
   });
 
   it('updates a transaction in the pool', () => {
-    const oldTransaction = JSON.stringify(transaction);
-    const newTransaction = transaction.update(wallet, 'foo-4ddr355', 40);
+    const prior = JSON.stringify(transaction);
+    const t = transaction.update(wallet, 'foo-4ddr355', 40);
 
-    pool.addOrUpdate(newTransaction);
-    expect(JSON.stringify(pool.transactions.find(t => t.id === newTransaction.id))).not.toEqual(oldTransaction);
+    pool.addOrUpdate(t);
+    expect(JSON.stringify(pool.transactions.find(t => t.id === t.id))).not.toEqual(prior);
   });
 });
