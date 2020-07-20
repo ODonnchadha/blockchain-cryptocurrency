@@ -31,6 +31,7 @@ describe('Wallet', () => {
         expect(transaction.outputs.filter(output => output.address === recipient)
           .map(output => output.amount)).toEqual([sendAmount, sendAmount]);
       });
+      
     });
   });
 });
