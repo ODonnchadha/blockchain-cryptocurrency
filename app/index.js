@@ -37,9 +37,7 @@ app.post('/mine', (req, res) => {
 });
 
 app.post('/transact', (req, res) => {
-	console.log('req.body ', req.body);
 	const { recipient, amount } = req.body;
-	console.log('amount ', amount);
   const transaction = wallet.createTransaction(recipient, amount, pool);
   res.redirect('/transactions');
 });
