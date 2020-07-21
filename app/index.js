@@ -15,7 +15,7 @@ const pool = new TransactionPool();
 app.use(bodyParser.json());
 app.listen(HTTP_PORT, () => console.log(`Listening on port: ${HTTP_PORT}`));
 
-const peer = new P2PServer(blockchain);
+const peer = new P2PServer(blockchain, pool);
 peer.listen();
 
 app.get('/blocks', (req, res) => {
