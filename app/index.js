@@ -29,6 +29,13 @@ app.get('/transactions', (req, res) => {
   res.json(pool.transactions);
 });
 
+/*
+Expose the address of an instance.
+*/
+app.get('/public-key', (req, res) => {
+  res.json({ publicKey: wallet.publicKey });
+});
+
 app.post('/mine', (req, res) => {
 	const block = blockchain.add(req.body.data);
 	console.log(`New block added: ${block.toString()}`);
@@ -38,6 +45,9 @@ app.post('/mine', (req, res) => {
 
 app.post('/transact', (req, res) => {
 	const { recipient, amount } = req.body;
-  const transaction = wallet.createTransaction(recipient, amount, pool);
+	const transaction = wallet.createTransaction(recipient, amount, pool);
+
+	peer.broadcastTransaction(transaction);
+
   res.redirect('/transactions');
 });
