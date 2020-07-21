@@ -123,3 +123,9 @@
     "testEnvironment": "node"
   },
 ```
+
+## Transaction Pool:
+ - An object that contains all new transaction submitted by individuals.
+ - Unconfirmed transactions. Miners create blocks and confirm transactions. A new block, then, in the transaction.
+ - There will be a brief period when the transaction is inconfirmed. 
+ - Decentralized blockchain history.

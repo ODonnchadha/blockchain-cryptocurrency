@@ -16,6 +16,7 @@ class Transaction {
   }
 
   static create(senderWallet, recipient, amount) {
+
     if (amount > senderWallet.balance) {
       console.log(`Amount: ${amount} exceeds balance.`);
       return;
@@ -27,8 +28,8 @@ class Transaction {
       { amount: senderWallet.balance - amount, address: senderWallet.publicKey },
       { amount, address: recipient }
     ]);
-    Transaction.sign(transaction, senderWallet);
 
+    this.sign(transaction, senderWallet);
     return transaction;
   }
 
