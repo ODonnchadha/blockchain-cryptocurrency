@@ -129,3 +129,8 @@
  - Unconfirmed transactions. Miners create blocks and confirm transactions. A new block, then, in the transaction.
  - There will be a brief period when the transaction is inconfirmed. 
  - Decentralized blockchain history.
+
+ ## Miners:
+ - A miner will take thansactions from the pool and store them into blocks.
+ - Miners receive rewards for mining.
+ - Transaction move from "unconfirmed" in the pool to "confirmed" in the chain.
