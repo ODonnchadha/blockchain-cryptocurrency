@@ -1,5 +1,4 @@
 const TransactionPool = require('./transaction-pool');
-const Transaction = require('./transaction');
 const Wallet = require('./index');
 
 describe('TransactionPool', () => {
@@ -8,9 +7,7 @@ describe('TransactionPool', () => {
   beforeEach(() => {
     pool = new TransactionPool();
     wallet = new Wallet();
-    transaction = Transaction.create(wallet, 'r4nd-4dr355', 30);
-
-    pool.addOrUpdate(transaction);
+    transaction = wallet.createTransaction('r4nd-4dr355', 30, pool);
   });
 
   it('adds a transaction to the pool', () => {
@@ -23,5 +20,35 @@ describe('TransactionPool', () => {
 
     pool.addOrUpdate(t);
     expect(JSON.stringify(pool.transactions.find(t => t.id === t.id))).not.toEqual(prior);
+  });
+
+  /*
+  Create a situation where there is a mix of valid and corrupt transactions.
+  */
+  describe('mixing valid and corrupt transactions', () => {
+    let validTransactions;
+
+    beforeEach(() => {
+      validTransactions = [...pool.transactions];
+
+      for (let i = 0; i < 6; i++) {
+        wallet = new Wallet();
+        transaction = wallet.createTransaction('r4nd-4dr355', 30, pool);
+        if (i % 2 == 0) {
+          transaction.input.amount = 9999;
+        } else {
+          validTransactions.push(transaction);
+        }
+      }
+    });
+
+    it('shows a difference between valid and corrupt transactions', () => {
+      expect(JSON.stringify(pool.transactions)).not.toEqual(JSON.stringify(validTransactions));
+    });
+  
+    it('grabs valid transactions', () => {
+      expect(pool.validTransactions()).toEqual(validTransactions);
+    });
+
   });
 });
