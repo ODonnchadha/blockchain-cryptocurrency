@@ -1,46 +1,98 @@
 ## Overview
-- Build a Blockchain and a Cryptocurrency from Scratch. Learn by building. Growing need for blockchain engineers.
+```javascript
+    npm i -g npm-check-updates
+    ncu
+```
+- Build a Blockchain and a Cryptocurrency from Scratch. Learn by building. 
+- Motivation:
+    - Growing need for blockchain engineers.
 - Roapmap:
-    1. Core Blockchain.
-    2. API around the blockchain.
-    3. Dynamic P2P server.
-    4. Implement as a POC.
+    1. Code the core blockchain.
+    2. Build an API around the blockchain.
+    3. Create a dynamic P2P server.
+    4. Implement a proof-of-work system to balance users.
     5. Create a transaction system for cryptocurrency.
-    - Node.js. With testing.
+- Technologies:
+    - NodeJS with a focus on testing.
+
 - What and why?
-    1. Blockchain: Distributed and decentralized ledger that stores data, such as transactions, snd is publically shared across all of the nodes within its network.
+    1. Blockchain: 
+    - Distributed and decentralized ledger that stores data, such as transactions, and that ledger is publically shared across all of the nodes within its network.
     - Every block is given an unique value called the hash. Hash is built upon the unique data that we want to store.
     - Unique hash of the last block is leveraged for the *new* block and will have that reference.
+    - Links are created because a new block references the last block. Thus, a chain of blocks.
     2. Ledger: A record-keeping book that stores all of the transactions of an organization.
+        - The blockchain is a distributed ledger.
     3. Distributed: 
+        - Shared with everyone using the blockchain network. A complete copy of the ledger is with everyone.
+        And then will then receive updates. Everyone has a copy. There is not *ONE* central organization.
     4. Decentralized: Everyone records the data and has equal power. Fair and transparent. Trustless.
-    5. Why? No middlemen and no fees. Highly secure with no central point of failure. Dependable data.
-- Blockchain in practice:
-    1. Cryptocurrency: Digital medium of exchange. (a) Secure Blockchain. (b) Secure Wallets. (c) Concept of mining.
+        - CENTRALIZED:
+            a. One entity records the data.
+            b. The central entity has a lot of power.
+            c. Full authority to fine or reward.
+            d. Complete trust with the entity.
+        - DECENTRALIZED:
+            a. Trustless. You only trust the 'system' itself.
+            b. Everyone records the data.
+            c. Everyone has equal power.
+            d. Fair and transparent system.
+    5. Why use blockchain?
+        - Decentralization leads to a trustless system.
+        - No middlemen and no fees.
+        - Highly secure with no central point of failure.
+        - Dependable data.
+
+- Blockchain in practice: (Use cases.)
+    1. Cryptocurrency: 
+        - Digital medium of exchange. 
+        - Three main aspects:
+            a. Secure Blockchain.
+                - Uses cryptography to generate digital signatures.
+                - Digital signatures:
+                    - Private Key: Only the one individual has access to.
+                    - Public Key: Key used to identify the 'one' individual.
+            b. Secure Wallets.
+                - Objects that store the orivate and public key of an individual.
+                - The public key is used as a address of the wallet.
+                - Helps sign transactions.
+            c. Concept of mining.
     2. Using cryptography to generate digital signatures.
     3. Digital signature: (a) Private Key (that one ndividual ahs access to) and (b) Public Key.
     - Private Key + hash value (with original data) = signature.
     - Public Key is used to decrypt the signature and read the original data.
     4. Wallets. Store the private key and the public key of an individual. The public key is the address.
     5. Mining:
+        - Adding transaction to the blockchain. Unconfirmed transactions are sent to the network.
+        - Include blocks of transactions by solving a "proof of work" algorithm.
+            - Difficult to solve and computationally expensive. (Time consuming.)
+            - Once solved, the miner can add the block and other miners will then varify.
+
 - Mining:
     1. Adding transactions to the bloackchain. Confirmed and added. 
     2. Transactions are temporary "unconfirmed."
     3. Include blocks of transactions by solving a "proof of work" algorithm.
-    - Difficult to solve. Computationally expensive.
-    - Once solved, the miner can add the block and other miners will verify.
-    - Miners are rewarded for adding a block to the chain.
-    - The difficulty can adjust to control the rate of new blocks coming in.
+        - Difficult to solve. Computationally expensive.
+        - Once solved, the miner can add the block and other miners will verify.
+        - Miners are *rewarded* for adding a block to the chain. 
+            - (Versus electricity and hardware requirements.)
+        - Miners are rewarded for adding a block to the chain. (Via cryptocurrency.)
+        - The difficulty can adjust to control the rate of new blocks coming in.
+        - "Mining Rigs." Super computers.
     4. Bitcoin. The furst decentralized cryptocurrency in 2009.
-    - Great growth, and widespread in adoption.
-    - Ethereum, ripple, iota, litecoin. Same core concepts of mining to support.
-    5. Also:
-    - Blockchain-based voting registers.
-    - Blockchain-supported documentation and identification systems.
-    6. "Will this really change the world?"
-- Original white paper of Bitcoin:
-    - October 31, 2008. Satashi Nakamoto. Eight (8) pages divided into tweleve (12) sections.
+        - Great growth, and widespread in adoption.
+        - Ethereum, ripple, iota, litecoin. Same core concepts of mining to support.
+    5. Also (Additional Use Cases):
+        - Blockchain-based voting registers.
+        - Blockchain-supported documentation and identification systems.
+    6. *"Will this really change the world?"*
+
+- Original white paper of Bitcoin: bitcoin.pdf
+    - October 31, 2008. The "mysterious" Satashi Nakamoto. 
+    - Eight (8) pages divided into tweleve (12) sections.
     - A peer-to-peer electronic cash system.
+    - Timestamp Server:
+        - Necessary component to order blocks within the chain.
 
 ## Build The Blocks
 ```javascript
