@@ -2,6 +2,10 @@ const ChainUtil = require('../chain-util');
 const { DIFFICULTY, MINE_RATE } = require('../config');
 
 class Block {
+    /*
+        lastHash: Hash of the prior block.
+        data: 
+    */
     constructor(timestamp, lastHash, hash, data, nonce, difficulty) {
         this.timestamp = timestamp;
         this.lastHash = lastHash;
@@ -12,6 +16,7 @@ class Block {
     }
 
     /*
+    Enable to call this function, as static, without having to make an instance of 'Block.'
     Every blockchain starts with the "genesis block:" A default 'dummy' block to originate the chain.
     */
     static genesis() {
@@ -27,7 +32,9 @@ class Block {
     }
 
     /*
+    Static as to use the function without having to create an instance.
     Generate a block based off of some provided data to store and the associated previous block.
+    data: Data to store for the new block.
     */
     static mine(lastBlock, data) {
         let hash, timestamp;
@@ -72,7 +79,9 @@ class Block {
     }
 
     /*
-    Software driver. Used for testing.
+    Software driver. Used for testing and debugging. 
+    An instance of what the class looks like.
+    Hash values are very long. Thus, the substring.
     */
     toString() {
         return `Block -
