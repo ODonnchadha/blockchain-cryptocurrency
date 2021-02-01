@@ -97,26 +97,39 @@
 ## Build The Blocks
 ```javascript
     npm init -y
-    npm i nodemon --dev-save
+    npm i nodemon --save-dev
 ```
+- Nodemon: Live development server with automatic reload.
 - Block:
-    1. Timestamp in milliseconds
-    2. lastHash. The hash of the block before it.
+    - Most fundamental unit. At the four, four (4) fundamental pieces of data.
+    1. Timestamp in milliseconds. JavaScript date object.
+    2. lastHash. The hash of the block before it. Unique value generated on a comnbination of all unique data.
     3. Hash. Based upon its own data.
-    4. The data to store.
+    4. The data to store. Can be: string. number array. object.
+
 - Genesis Block:
+    - Within project, make classes for objects so that we can then make instances of those objects. ES6 JS class.
     - What about the first block? The Genesis block is the origin. Hard-coded "dummy" block.
     1. Block hashes and SHA-256.
-    - The hash is generated from the timestamp, lastHash, and stored data.
-    - Produces an unique 32-byte (256 bit) hash vaue for unique data inputs.
-    - One-way hash. Useful for block validation.
-    ```javascript
-        npm i crypto-js --save
-    ```
-- Test Runner:
-    ```javascript
-        npm i jest --save-dev
-    ```
+        - The hash is generated from the timestamp, lastHash, and stored data.
+        - Produces an unique 32-byte (256 bit) hash value for unique data inputs.
+        - One-way hash. Useful for block validation. "Pretty much impossible" to decrypt.
+        - Useful for block validation.
+        ```javascript
+            npm i crypto-js --save
+        ```
+    - Set-up a test environment.
+    - Install the test runner and execute testing files within the project. See: ./blockchain/block.test.js
+        ```javascript
+            npm i jest --save-dev
+        ```
+        - Set up server that lsitens to changes and reruns the entire suite when a changed file is detected.
+        ```javascript
+            "scripts": {
+                "test": "jest --watchAll"
+            }
+        ```
+
 
 ## Build The Chain
 

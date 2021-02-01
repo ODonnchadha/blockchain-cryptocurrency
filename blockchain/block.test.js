@@ -1,5 +1,4 @@
 const Block = require('./block');
-const { MINE_RATE } = require('../config');
 
 describe('Block', () => {
     let data, lastBlock, block;
@@ -9,8 +8,8 @@ describe('Block', () => {
         lastBlock = Block.genesis();
         block = Block.mine(lastBlock, data);
     });
-	
-    it('sets the `data` to match the input', () => {
+    
+    it('sets the `data` to match the given input', () => {
         expect(block.data).toEqual(data);
     });
 
@@ -22,7 +21,7 @@ describe('Block', () => {
         expect(Block.adjustDifficulty(block, block.timestamp + 360000)).toEqual(block.difficulty - 1);
     });
       
-      it('raises the difficulty for quickly mined blocks', () => {
+    it('raises the difficulty for quickly mined blocks', () => {
         expect(Block.adjustDifficulty(block, block.timestamp + 1)).toEqual(block.difficulty + 1);
     });
 	
