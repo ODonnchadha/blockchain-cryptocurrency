@@ -3,8 +3,8 @@ const { DIFFICULTY, MINE_RATE } = require('../config');
 
 class Block {
     /*
-        lastHash: Hash of the prior block.
-        data: 
+    lastHash: Hash of the prior block.
+    data: 
     */
     constructor(timestamp, lastHash, hash, data, nonce, difficulty) {
         this.timestamp = timestamp;
@@ -71,7 +71,8 @@ class Block {
     }
 
     /*
-    This will generate the hash of a block based only on its instance.
+    This will generate the hash of a block based only on its instance. 
+    Used for validating each block within a given chain.
     */
     static blockHash(block) {
         const { timestamp, lastHash, data, nonce, difficulty } = block;

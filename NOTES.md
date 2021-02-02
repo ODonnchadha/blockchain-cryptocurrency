@@ -132,6 +132,16 @@
 
 
 ## Build The Chain
+- Multiple chain validation.
+    - Multiple contributors will be adding to the blockchain. Each minr will have their own version of the chain.
+    - Miners will have to submit their new block, ensure that it is valid, and then accept those changes.
+    - By accpeting longer chains that come in, we avoid forks.
+    - If a block is created at the same time based off of the same last block, the overall system will need to come to an agreement.
+    - Once a miner extends a chin by making a longer chain based off of one of the *new*, competing blocks, the fork is resolved.
+    - Hash validation comes in to play. Was the data tampered with?
+- Chain validation:
+    - Choosing the longer chain resolves:
+        - Forking: Where two blockchains submit the samre block at the same time.
 
 ## Develop the Blockchain Application
 ```javascript
@@ -139,7 +149,7 @@
     npm i body-parser --save
 ```
 
-## Peer-to-Peer server
+## Peer-to-Peer Server
 - We'll be using WebSockets. Ensure that a connected "peer" has the latest blockchain.
 1. Create a Websocket server.
 ```javascript
